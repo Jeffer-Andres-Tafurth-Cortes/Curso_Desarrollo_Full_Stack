@@ -9,17 +9,17 @@
   de lo que consta toda la tematica en general, el README.md en cada carpeta tambien esta dividido en varios puntos fundamentales de lo que consta el temario
 
 ## Temario
-- Introduccion a React
-- Comunicacion con el servidor
-- Programando un servidor con NodeJS y Express
-- Probando servidores Express, administración de usuarios
-- Probando aplicaciones React
-- Gestión avanzada del estado
-- React router, custom hooks, estilando la aplicación con CSS y webpack
-- GraphQL
-- TypeScript
-- React Native
-- CI/CD
+1. Introduccion a React
+2. Comunicacion con el servidor
+3. Programando un servidor con NodeJS y Express
+4. Probando servidores Express, administración de usuarios
+5. Probando aplicaciones React
+6. Gestión avanzada del estado
+7. React router, custom hooks, estilando la aplicación con CSS y webpack
+8. GraphQL
+9. TypeScript
+10. React Native
+11. CI/CD
 
 ## Tecnologias y lenguajes
 - React
