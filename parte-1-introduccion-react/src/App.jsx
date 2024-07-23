@@ -1,20 +1,11 @@
-import React from 'react';
 import './App.css'
 
-function Hello(){
-  return(
-    <>
-      <h2>Hello World</h2>
-    </>
-  )
-}
-
+// Este componente llamado App es el que renderiza todo lo describa dentro de react
 function App() {
-
   return (
     <>
-      <h1>Greetings</h1>
-      <Hello />
+      <h1>Parte 1 - Full Stack Open</h1>
+      {/** Aqui pueden importar cualquier componente que esta dentro de la carpeta Components */}
     </>
   )
 }
