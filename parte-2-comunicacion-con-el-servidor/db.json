@@ -1,18 +1,28 @@
 {
   "notes": [
     {
-      "id": 1,
+      "id": "1",
       "content": "HTML es facil",
       "important": true
     },
     {
-      "id": 2,
+      "id": "2",
       "content": "El navegador solo puede ejecutar JavaScript",
       "important": false
     },
     {
-      "id": 3,
+      "id": "3",
       "content": "GET y POST son los metodos mas comunes en los protocolos de HTTP",
+      "important": true
+    },
+    {
+      "id": 4,
+      "content": "POST fue agregado a la data",
+      "important": true
+    },
+    {
+      "id": 5,
+      "content": "Todo el codigo de esta aplicacion esta en GitHub",
       "important": true
     }
   ]

@@ -21,4 +21,12 @@
 - Aqui es donde entra el hook useEffect, que entre todas las funciones de este hook una de las mas conocida es que podemos hacer llamadas a APIs; el hook useEffect requiere de dos argumentos, el primero es la ejecucion del efecto como tal y el segundo es se renderiza una vez o despues de que alguna prop o argumento de otra parte de codigo llegue al hook
 
 ## Alterando datos en el servidor 
-- Para este punto ya al crear notas en la aplicacion quedan guardadas en el Back-End, por ende se podria decir que es una manera de explicar, de como crear y de como usar una API REST 
+- Para este punto ya al crear notas en la aplicacion quedan guardadas en el Back-End, por ende se podria decir que es una manera de explicar, de como crear y de como usar una API REST (el termino REST hace alusion a objetos de datos individuales)
+- Cuando se trabajan con APIs debemos de usar las peticiones HTTP, por ejemplo la mas comun es la peticion GET; es decir, obtener datos de la API ya sea un dato en especifico o todos los datos. Tambien esta la peticion POST la cual permite crear un nuevo recurso para almacenarlo (Hay que tener en cuenta que los datos se suben en formato JSON)
+- Dentro de los metodos HTTP tambien esta PUT(con PUT podemos reemplazar por completo la informacion) y PATCH(con PATCH podemos cambiamos alguna propiedad de la informacion)
+- Es importante dedicarle un tiempo prudente a comprender las promesas ya que siempre que vamos a hacer peticiones HTTP vamos a usar promesas, ya sea que usemos la libreria Axios o directamente el metodo fetch de JavaScript
+- Fuera de responder las promesas usando .then(), podemos agregar un catch() para atrapar el error y retornar ese error
+
+## Agregar estilos a la aplicacion React
+- La opcion principal que se tiene para darle estilos a una aplicacion en React es usar CSS; cuando creamos una aplicacion podemos ver que se tienen dos archivos uno llamado 'index.css' y otro llamado 'App.css', podemos cambiar el estilo predeterminado que trae la aplicacion en esos archivos; pero tambien si ya manejamos aplicacion mas grandes con diferentes vistas, componente, modulos, etc, podemos agregar un estilo a cada vista, cada componente, cada modulo, etc.
+- Como regla principal CSS de componen de selectores y declaraciones, en donde el selector define a que elemento se va a estilo y la declaracion sera la propiedad que se le dara
