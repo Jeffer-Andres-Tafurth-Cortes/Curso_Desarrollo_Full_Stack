@@ -1,6 +1,6 @@
 # PARTE 2 - COMUNICACION CON EL SERVIDOR
 
-## Renderizanco una coleccion, modulos
+## Renderizando una coleccion, modulos
 - console.log(): usar la consola nos permite identificar errores en nuestra aplicacion cuando estemos trabajando en ella, ademas de ello nos ayuda a depurar de mejor manera
 - En Visual Studio Code podemos agregar extensiones que nos ayudan a tener snippets o podemos crear desde cero nuestros propios snippets (los snippets son un pequeño comando que da como resultado un conjunto de codigo en especifico, ejemplo esta el snippet rfce para crear una funcion en React)
 - En comun en React usar matrices por ende ya que se el lenguaje principal de uso en React es JavaScript podemos usar los metodos find(), filter() y map() para renderizar dichas matrices
