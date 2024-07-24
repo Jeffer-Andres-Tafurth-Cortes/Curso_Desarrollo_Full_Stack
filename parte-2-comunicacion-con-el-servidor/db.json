@@ -1,0 +1,19 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "content": "HTML es facil",
+      "important": true
+    },
+    {
+      "id": 2,
+      "content": "El navegador solo puede ejecutar JavaScript",
+      "important": false
+    },
+    {
+      "id": 3,
+      "content": "GET y POST son los metodos mas comunes en los protocolos de HTTP",
+      "important": true
+    }
+  ]
+}
