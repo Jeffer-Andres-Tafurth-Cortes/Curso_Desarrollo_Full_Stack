@@ -25,9 +25,13 @@
 - React
 - JavaScript
 - NodeJS
-- Express
+- ExpressJS
+- Eslint
 - CSS
+- Testing con Jest
+- Pruebas de extremo a extremo(Playwright y Cypress)
 - Webpack
 - GraphQL
+- Redux
 - TypeScript
 - React Native
