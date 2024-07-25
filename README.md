@@ -26,6 +26,7 @@
 - JavaScript
 - NodeJS
 - ExpressJS
+- MongoDB
 - Eslint
 - CSS
 - Testing con Jest
