@@ -22,6 +22,23 @@ function App() {
         setNotes(initialState)
     })
   }, []);
+
+  // La funcion addNote agrega notas
+  const addNote = (e) => {
+    e.preventDefault()
+    const noteObject = {
+      content: newNote,
+      important: Math.random() < 0.5,
+      id: notes.length + 1
+    }
+
+    noteService
+     .create(noteObject)
+     .then(returnedNote => {
+      setNewNote(notes.concat(returnedNote))
+      setNewNote('')
+     })
+  }
   
   const toogleImportanceOf = (id) => {
     const note = notes.find(n => n.id === id)
@@ -41,30 +58,13 @@ function App() {
     })
   }
 
-  // La funcion addNote agrega notas
-  const addNote = (e) => {
-    e.preventDefault()
-    const noteObject = {
-      content: newNote,
-      important: Math.random() < 0.5,
-      id: notes.length + 1
-    }
-
-    noteService
-     .create(noteObject)
-     .then(returnedNote => {
-      setNewNote(notes.concat(returnedNote))
-      setNewNote('')
-     })
-  }
-
   // La funcion handleNoteChange toma el valor del input
   const handleNoteChange = (e) => {
     setNewNote(e.target.value)
   }
 
   // el condicional notesToShow muestra las notas de acuerdo a si son importantes o no
-  const notesToShow = showAll ? notes : notes.filter(note => note.important === true)
+  const notesToShow = showAll ? notes : notes.filter(note => note.important)
 
   return (
     <>
@@ -76,8 +76,8 @@ function App() {
         </button>
       </div>
       <ul>
-        {notesToShow.map((note, i) => 
-          <Note key={i} note={note} toogleImportance={() => toogleImportanceOf(note.id)}/>
+        {notesToShow.map((note) => 
+          <Note key={note.id} note={note} toogleImportance={() => toogleImportanceOf(note.id)}/>
         )}
       </ul>
       <form onSubmit={addNote}>

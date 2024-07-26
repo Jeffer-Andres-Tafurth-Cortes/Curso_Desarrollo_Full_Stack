@@ -9,6 +9,13 @@
 - Para incorporar Express toca seguir usando el modulo de CommonJS 'const express = require('express')'
 - Cada vez que cambiemos algo del servidor como en este caso implementamos Express toco cerrar el puerto y luego volverlo a inicializar, debido a que en la web el inicio de los servidores es automatico para eso podemos implementar 'nodemon' que es basicamente una herramienta que todo el tiempo esta escuchando los cambios realizados en el servidor (en este caso en el archivo index.js) el cual reiniciará automáticamente tu aplicación de node. Para instalar 'nodemon' se usa el comando 'npm install --save-dev nodemon', esto para instalar nodemon como dependencia de desarrollo
 - Para inicializar el servidor con 'nodemon', dentro de scripts del archivo package.json se escribe el siguiente comando: "dev": "nodemon index.js",; y ya podemos inicializar nodemon en la terminal con el conocido 'npm run dev' para que este todo el tiempo escuchando el servidor
+- Cuando se habla del termino REST en API REST hablamos que es un estilo arquitectonico destinado a crear aplicaciones web escalables
+- Dentro de las peticiones HTTP tenemos: GET, POST, DELETE, PUT y PATCH; en donde podemos tener dos peticiones GET (una que obtenga un solo recurso usando el id y la otra que obtenga todos los recursos). Cabe destacar que lo que son DELETE, PUT y PATCH (se necesita el id del recurso para ejecutar la respectiva operacion)
+- POSTMAN es una herramienta que nos permite realizar pruebas hacer de las peticiones HTTP, eso nos simplifica el trabajo al probar una API en el Back-End
+
+## Despliegue de la aplicacion a internet
+- Primero hay que tener en cuenta si nos genera error en la politica del mismo origen, esto es debido a que cuando se usa Postman como es de prueba no hay ningun problema pero si ya de pasa a desplegar la aplicacion y generar error hay que importar CORS, que basicamente nos permite que acepte otras URL que no comparten el mismo origen de la aplicacion pero que a su vez sea seguro usar otras URL
+- Cuando estamos en desarrollo (de manera local) es factible de que todo funcione al 100%, pero para desplegar o para mandar a produccion la aplicacion tambien debemos crear un 'production build' y para esto se usa el comando 'npm run build'
 
 > [!NOTE]
 > - Si en la parte de ejecucion del Servidor Web Simple (tema: Node.JS y Express) esta presentando error toca eliminar en el package.json el "type": "module; ya que iniciando la aplicacion estamos usando metodos require() para su implementacion
