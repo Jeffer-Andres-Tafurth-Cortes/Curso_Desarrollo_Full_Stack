@@ -20,12 +20,36 @@ let notes = [
     important: true
   }
 ]
+
+// Definimos la ruta '/' que responde con un mensaje de 'Hola Mundo' en formato HTML
 app.get('/', (request, response) => {
   response.send('<h1>Hola Mundo</h1>')
 })
 
-app.get('/notes', (request, response) => {
+
+// Definimos la ruta '/notes' que responde con la lista de notas en formato JSON
+app.get('/api/notes', (request, response) => {
   response.json(notes)
+})
+
+// Definimos la ruta '/api/notes/:id' que permite buscar una nota a traves de un parametro, en este caso del id
+app.get('/api/notes/:id', (request, response) => {
+  const id = Number(request.params.id)
+  const note = notes.find(note => note.id === id)
+  
+  // Se hace una verificacion si la nota existe o no
+  if (note) {
+    response.json(note) 
+  } else {
+    response.status(404).end()
+  }
+})
+
+// Definimos la ruta '/api/notes/:id' pero esta ruta sera para eliminar una nota usando su parametro id
+app.delete('/api/notes/:id', (request, response) => {
+  const id = Number(request.params.id)
+  notes = notes.filter(note => note.id !== id)
+  response.status(204).end()
 })
 
 
