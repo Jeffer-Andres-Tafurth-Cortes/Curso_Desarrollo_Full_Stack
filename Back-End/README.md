@@ -15,6 +15,7 @@
 
 ## Despliegue de la aplicacion a internet
 - Primero hay que tener en cuenta si nos genera error en la politica del mismo origen, esto es debido a que cuando se usa Postman como es de prueba no hay ningun problema pero si ya de pasa a desplegar la aplicacion y generar error hay que importar CORS, que basicamente nos permite que acepte otras URL que no comparten el mismo origen de la aplicacion pero que a su vez sea seguro usar otras URL
+- Debido a que el Front-End y el Back-End de la aplicacion tienen diferentes direcciones URL en su ejecucion, en el Back-End se debe de instalar el CORS para habilitan las solicitudes cruzadas legítimas, esto se hace con el comando 'npm install cors'
 - Cuando estamos en desarrollo (de manera local) es factible de que todo funcione al 100%, pero para desplegar o para mandar a produccion la aplicacion tambien debemos crear un 'production build' y para esto se usa el comando 'npm run build'
 
 ## Guardando datos en MongoDB
