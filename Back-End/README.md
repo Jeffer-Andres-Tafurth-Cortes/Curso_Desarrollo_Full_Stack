@@ -20,16 +20,24 @@
 ## Guardando datos en MongoDB
 - Para poder agregar MongoDB primero debemos de agregar mongoose que es un mapear de objetos, el cual nos ayudara a mapear y guardar objetos JavaScript como documentos en Mongo, para eso se usa el comando 'npm install mongoose'
 - La configuracion respectiva de lo que sera la conexion de mongoDB estara en el archivo mongo.js
+- Ya teniendo defininida la URL de mongoDB junto con el usuario y la respectiva contraseñan (en este caso eso esta en el archivo mongo.js), ejecutamos en la terminal de la raiz del back-end el comando node mongo.js password (en donde password es la resepctiva contraseña creada con ese usuario)
+- Debido a que la direccion URL de la base de datos con la respectiva contraseña no es seguro dejarlos en archivos donde estan toda la programacion es mejor manejarlos bajo variables de entorno (env); para ello se utiliza dotenv (un modulo de carga de variables de entorno) y se instala con el comando 'npm install dotenv, seguido de ello en la raiz de la carpeta del back-end se debe de crear un archivo llamado .env y alojar alli direccion URL de la base de datos y la contraseña
+- El archivo .env debe ignorarse de inmediato en .gitignore, ¡ya que no queremos publicar ninguna información confidencial públicamente!
+- Despues de ya llevar un tiempo en donde casi tengamos nuestra aplicacion (Front-End y Back-End) terminada es bueno ir manejando los errores, esto tambien sirve pa' ir probando funcionalidades y agregar cosas en llegado caso que algo no sirva
 
-fullstackopen
-bNtiEROvlw2XVoyQ
+## Validacion y ESLint
+- Por lo general existen restricciones que queremos aplicar a la aplicacion en la cual estemos trabajando, en este caso como es una aplicacion de notas no queremos que se guarde alguna nota con el contenido vacio y se debe de realizar dentro del codigo una verificacion por si esto llegase a suceder (basicamente realizar validaciones)
+- En este caso se agrego como validadores minLength y required de mongoose en el esquema 'noteSchema' de la nota definido en el archivo 'note.js'
 
-mongodb+srv://fullstackopen:bNtiEROvlw2XVoyQ@fullstackopen.nexlcsi.mongodb.net/?retryWrites=true&w=majority&appName=fullstackopen
+# PARTE 4 - PROBANDO SERVIDORES EXPRESS, ADMINISTRACION DE USUARIOS
 
-
+## Estructura de la aplicacion backend, introduccion a las pruebas
 
 
 > [!NOTE]
 > - Si en la parte de ejecucion del Servidor Web Simple (tema: Node.JS y Express) esta presentando error toca eliminar en el package.json el "type": "module; ya que iniciando la aplicacion estamos usando metodos require() para su implementacion
 > - La gran mayoria de NodeJS esta escrita con los modulos CommonJS por ende es que se usa el metodo require() en vez de usar el import de ES6; aunque se pueden usar cualquiera de las dos formas veremos mucho mas codigo escrito con modulos CommonJS
 > - Las primera practicas de desarrollador el Back-End con NodeJS estan descritas en el archivo 'index-node.js'; despues de incorporar Express 'index.js' sera el archivo a seguir trabajando
+> - El archivo .env debe ignorarse de inmediato en .gitignore, ¡ya que no queremos publicar ninguna información confidencial públicamente!
+> - Cuando en back-end que estemos trabajando ya se extienda mucho es bueno ir probando el back-end, ya sea con el navegador, con Postman o con el cliente REST de VS Code
+> - Cuando se trabaje en un back-end es fundamental estar atento a la salida de la consola del backend

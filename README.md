@@ -36,3 +36,12 @@
 - Redux
 - TypeScript
 - React Native
+
+## Reglas de un desarrollador Full Stack
+- Mantendré la consola de desarrollador del navegador abierta todo el tiempo.
+- Utilizaré la pestaña de red de las herramientas de desarrollo del navegador para asegurarme de que el frontend  y el backend estén comunicándose como espero.
+- Vigilaré constantemente el estado del servidor para asegurarme de que los datos enviados por el frontend se guarden allí como espero.
+- Observaré la base de datos: ¿guarda el backend los datos allí en el formato correcto?
+- Progresaré con pequeños pasos.
+- Escribiré muchas declaraciones de console.log para asegurarme de entender cómo se comporta el código y ayudar a señalar problemas.
+- Si mi código no funciona, no escribiré más código. En su lugar, comenzaré a eliminar código hasta que funcione o simplemente regresaré a un estado en el que todo aún funcionaba.
