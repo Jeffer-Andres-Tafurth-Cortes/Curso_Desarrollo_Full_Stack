@@ -31,7 +31,14 @@
 - La opcion principal que se tiene para darle estilos a una aplicacion en React es usar CSS; cuando creamos una aplicacion podemos ver que se tienen dos archivos uno llamado 'index.css' y otro llamado 'App.css', podemos cambiar el estilo predeterminado que trae la aplicacion en esos archivos; pero tambien si ya manejamos aplicacion mas grandes con diferentes vistas, componente, modulos, etc, podemos agregar un estilo a cada vista, cada componente, cada modulo, etc.
 - Como regla principal CSS de componen de selectores y declaraciones, en donde el selector define a que elemento se va a estilo y la declaracion sera la propiedad que se le dara
 
+---
+
 # PARTE 3 - PROGRAMANDO UN SERVIDOR CON NODEJS Y EXPRESS
+
 ## Frontend production build / Sirviendo archivos estáticos desde el backend
 - Para este punto ya tenemos el back-end y el front-end; es hora de mandarlo a produccion, para esto ya que estamos usando React y Vite tenemos un comando en especifico para ello, el cual es: 'npm run build'; este comando crea una carpeta con el nombre de 'dist'
-- Para servir la carpeta 'dist' en el back-end debemos de copiarla, desde la raiz del front-end usamos el comando 'copy -r dist ../backend' para copiarla en la raiz del back-end 
+- Para servir la carpeta 'dist' en el back-end debemos de copiarla, desde la raiz del front-end usamos el comando 'copy -r dist ../backend' para copiarla en la raiz del back-end
+
+---
+
+# PARTE 5 - PROBANDO APLICACIONES REACT
