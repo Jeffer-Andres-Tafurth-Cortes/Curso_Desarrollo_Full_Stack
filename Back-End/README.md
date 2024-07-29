@@ -30,11 +30,6 @@
 - Por lo general existen restricciones que queremos aplicar a la aplicacion en la cual estemos trabajando, en este caso como es una aplicacion de notas no queremos que se guarde alguna nota con el contenido vacio y se debe de realizar dentro del codigo una verificacion por si esto llegase a suceder (basicamente realizar validaciones)
 - En este caso se agrego como validadores minLength y required de mongoose en el esquema 'noteSchema' de la nota definido en el archivo 'note.js'
 
-# PARTE 4 - PROBANDO SERVIDORES EXPRESS, ADMINISTRACION DE USUARIOS
-
-## Estructura de la aplicacion backend, introduccion a las pruebas
-
-
 > [!NOTE]
 > - Si en la parte de ejecucion del Servidor Web Simple (tema: Node.JS y Express) esta presentando error toca eliminar en el package.json el "type": "module; ya que iniciando la aplicacion estamos usando metodos require() para su implementacion
 > - La gran mayoria de NodeJS esta escrita con los modulos CommonJS por ende es que se usa el metodo require() en vez de usar el import de ES6; aunque se pueden usar cualquiera de las dos formas veremos mucho mas codigo escrito con modulos CommonJS
@@ -42,3 +37,10 @@
 > - El archivo .env debe ignorarse de inmediato en .gitignore, ¡ya que no queremos publicar ninguna información confidencial públicamente!
 > - Cuando en back-end que estemos trabajando ya se extienda mucho es bueno ir probando el back-end, ya sea con el navegador, con Postman o con el cliente REST de VS Code
 > - Cuando se trabaje en un back-end es fundamental estar atento a la salida de la consola del backend
+
+---
+
+# PARTE 4 - PROBANDO SERVIDORES EXPRESS, ADMINISTRACION DE USUARIOS
+
+## Estructura de la aplicacion backend, introduccion a las pruebas
+
