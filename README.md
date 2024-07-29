@@ -5,8 +5,13 @@
   de Desarrollo Web Full Stack llamado: Full stack Open
 
 ## Tematicas (Carpetas)
-- Cada tematica estara divida en una carpeta con el nombre de la tematica correspondiente, cada carpeta tendra sus respectivos ejemplos (codigo) y un README.md en donde estara la explicacion
-  de lo que consta toda la tematica en general, el README.md en cada carpeta tambien esta dividido en varios puntos fundamentales de lo que consta el temario
+- Este repositorio constara de 5 carpetas en donde se dividiran de acuerdo a tecnologias
+  - Introduccion a React (Aqui estara constara de codigo y explicacion(archivo README.md) acerca de lo basico de la libreria React y de JavaScript como Lenguaje principal)
+  - Front-End (Aqui estara el codigo y explicacion(archivo README.md) acerca del Front-End de una aplicacion de Notas en donde se abarcaran varias tecnologias en conjunto)
+  - Back-End (Aqui estara el codigo y explicacion(archivo README.md) acerca del Back-End de la aplicacion de Notas en donde se abarcaran varias tecnologias en conjunto)
+  - TypeScript (Aqui ya en vez de JavaScript se hace uso de TypeScript en un proyecto diferente, estara el codigo y la explicacion en su respectivo README.md)
+  - React Native (Esta carpeta corresponde a todo lo que abarca la creacion de aplicaciones moviles con React Native abarcando lo que es introduccion, conceptos basicos, comunicacion con el servidor y pruebas)
+  - CI/CD (Esta carpera corresponde mas de manera teorica a todo lo que corresponde el CI/CD en el desarrollo abarcando todo el tema de GitHub y GitHub actions)
 
 ## Temario
 1. Introduccion a React
