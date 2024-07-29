@@ -26,7 +26,6 @@ bNtiEROvlw2XVoyQ
 
 mongodb+srv://fullstackopen:bNtiEROvlw2XVoyQ@fullstackopen.nexlcsi.mongodb.net/?retryWrites=true&w=majority&appName=fullstackopen
 
-mongodb+srv://fullstackopen:<password>@fullstackopen.nexlcsi.mongodb.net/?retryWrites=true&w=majority&appName=fullstackopen
 
 
 

@@ -21,6 +21,28 @@ let notes = [
   }
 ]
 
+app.use(express.static('dist'))
+
+const requestLogger = (request, response, next) => {
+  console.log('Method: ', request.method)
+  console.log('Path: ', request.path)
+  console.log('Body: ', request.body)
+  console.log('---')
+  next()
+}
+
+const cors = require('cors')
+app.use(cors())
+
+app.use(express.json())
+
+// Middleware
+app.use(requestLogger)
+
+const unknownEndpoint = (request, response) => {
+  response.status(404).send({ error: 'Endpoint desconocido' })
+}
+
 // Definimos la ruta '/' que responde con un mensaje de 'Hola Mundo' en formato HTML
 app.get('/', (request, response) => {
   response.send('<h1>Hola Mundo</h1>')
@@ -52,9 +74,42 @@ app.delete('/api/notes/:id', (request, response) => {
   response.status(204).end()
 })
 
+// La funcion generateId sera la encargada de asignar un Id cuandose crea una nota con el metodo POST
+const generateId = () => {
+  const maxId = notes.length > 0
+    ? Math.max(...notes.map(n => n.id))
+    : 0
+  return maxId + 1 
+}
+ 
+
+// Definimos la ruta '/api/notes' para agregar una nueva nota
+app.post('/api/notes', (request, response) => {
+
+  const body = request.body
+
+  // Validamos que el body contenga el contenido de la nota
+  if (!body) {
+    return response.status(404).json({
+      error: 'La nota no tiene ningun tipo de contenido',
+    })
+  }
+
+  const note = {
+    content: body.content,
+    important: Boolean(body.important) || false,
+    id: generateId()
+  }
+
+  notes = notes.concat(note)
+
+  response.json(note)
+})
+
+app.use(unknownEndpoint)
 
 // Establecemos el puerto en el que el servidor va a escuchar
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`el servidor se esta ejecutando en el puerto ${PORT}`);
 })
