@@ -48,4 +48,20 @@
 - El manejo de las variables de entorno del back-end se extraen en un archivo llamado 'config.js', este archivo estara dentro de la carpeta 'utils'
 - Se cambian un par de archivos, el contenido de la aplicacion Express que estaba en el archivo 'index.js' va a pasar a un archivo llamado 'app.js' de la raiz del back-end; y el archivo 'index.js' ahora solo recibira de lo que debe de renderizar la aplicacion, incluyento el config.js, el logger.js y el puerto a escuchar, en pocas palabras "El archivo index.js solo importa la aplicación real desde el archivo app.js" 
 - Como se esta separando la aplicacion del back-end para tener la logica en varios archivos, de crear la carpeta controllers y a su vez se crea el archivo 'notes.js' en donde stara la logica con respecto a las rutas creadas para la aplicacion de Notas
+- Como la logica de las rutas estan el archivo 'notes.js' de la carpeta 'controllers' usamos el Router de Express para generar las rutas
+- El middleware que teniamos en el archivo 'index.js' se pasa a un archivo dentro de la carpeta 'utils'; el archivo se llama 'middleware.js'
+- Recordemos que el Testing es una parte fundamental del desarrollo de software, mas que todo la prueba automatizada; en donde la mas comun son las pruebas unitarias
+- Para las pruebas unitarias (Testing) se crea el archivo 'for_testing.js' dentro de la carpeta 'utils'
+- Dentro de las librerias para hacer testing tenemos varias, como 'Mocha' la mas antigua, 'Jest' es la que mas se ha usado en los ultimos años pero ha sido opacada por 'Vitest'; a pesar de eso Node tambien tiene su libreria de testing, por ende en este proyecto de usa 'node:test' como test runner
+- Las pruebas descritas estan en el directorio 'tests' y los archivos de las pruebas son 'reverse.test.js' y 'average.test.js' , para poder ejecutar las pruebas se escribe el comando 'npm test' en la terminal de la raiz del back-end
+
+> [!NOTE]
+> - Los archivos de tests 'average.test.js' y 'reverse.test.js' son simplemente archivos de prueba a modo de ejemplo de como escribir y ejecutar las pruebas en la terminal
+
+## Probando el backend
+- Debido a que el backend de la aplicacion no tiene logica complicada no se realizan pruebas unitarias, en vez de eso lo unico que se prueba son el metodo 'toJSON' usado para formatear las notas; esto quiere decir que se prueba la aplicacion a traves de su API REST; a este tipo de prueba se le conoce como prueba de integracion ya que tambien se testea la base de datos
+- Ya que se usa la libreria de testing de node (node:test) por ende se debe de definir el modo de ejecucion de la aplicacion con la variable de entorno NODE_ENV
+- Si estamos usando sistema operativo Windows se debe de implementar una dependencia de desarrollo que nos permite ejecutar los script para los test, el comando es 'npm install --save-dev cross-env' (se ejecuta en la raiz del backend)
+- Tambien instalamos otra dependencia de desarrollo para testear la API, y el comando es 'npm install --save-dev supertest' (se ejecuta en la raiz del backend)
+- Las respectivas pruebas del backend trabajado estaran en el archivo 'note_api.test.js' en el directorio 'tests'
 
