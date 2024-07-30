@@ -43,4 +43,9 @@
 # PARTE 4 - PROBANDO SERVIDORES EXPRESS, ADMINISTRACION DE USUARIOS
 
 ## Estructura de la aplicacion backend, introduccion a las pruebas
+- A pesar de que ya teniendo despues de la parte 3 un back-end construido debemos separar cierta logica en diferentes archivos, esto para que sea mas escalable y legible
+- Se crear una carpeta llamada 'utils' en donde se crear a su vez el archivo 'logger.js' en donde estara la logica que corrresponde al manejo de los 'console.log()' y 'console.error()' que se han usado en el 'index.js' del back-end
+- El manejo de las variables de entorno del back-end se extraen en un archivo llamado 'config.js', este archivo estara dentro de la carpeta 'utils'
+- Se cambian un par de archivos, el contenido de la aplicacion Express que estaba en el archivo 'index.js' va a pasar a un archivo llamado 'app.js' de la raiz del back-end; y el archivo 'index.js' ahora solo recibira de lo que debe de renderizar la aplicacion, incluyento el config.js, el logger.js y el puerto a escuchar, en pocas palabras "El archivo index.js solo importa la aplicación real desde el archivo app.js" 
+- Como se esta separando la aplicacion del back-end para tener la logica en varios archivos, de crear la carpeta controllers y a su vez se crea el archivo 'notes.js' en donde stara la logica con respecto a las rutas creadas para la aplicacion de Notas
 
