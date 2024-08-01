@@ -5,27 +5,24 @@ const Note = require('../models/note')
 // A partir de aqui se definen las diferentes rutas que habiamos creado antes
 
 // Ruta GET para obtener todas las notas
-noteRouter.get('/',  (request, respose) => {
-  Note.find({}).then(notes => {
-    respose.json(notes)
-  })
+noteRouter.get('/', async(request, response) => {
+  const notes = await Note.find({})
+    response.json(notes)
 })
 
 // Ruta GET para obtener una nota usando su ID
-noteRouter.get('/:id', (request, response, next) => {
-  Note.findById(request.params.id)
-    .then(note => {
-      if(note){
-        response.json(note)
-      } else {
-        response.status(404).end()
-      }
-    }) 
-    .catch(error => next(error))
+noteRouter.get('/:id', async (request, response) => {
+
+  const note = await Note.findById(request.params.id)
+  if(note){
+    response.json(note)
+  } else {
+    response.status(404).end()
+  }
 })
 
 // Ruta POST para crear una nueva nota
-noteRouter.post('/', (request, response, next) => {
+noteRouter.post('/', async (request, response) => {
   const body = request.body
 
   const note = new Note({
@@ -33,20 +30,14 @@ noteRouter.post('/', (request, response, next) => {
     important: body.important || false
   })
 
-  note.save()
-    .then(savedNote => {
-      response.json(savedNote)
-    })
-    .catch(error => next(error))
+  const savedNote = await note.save()
+  response.status(201).json(savedNote)
 })
 
 // Ruta DELETE para eliminar una nota
-noteRouter.delete('/:id', (request, response, next) => {
-  Note.findByIdAndDelete(request.params.id)
-    .then(() => {
-      response.status(204).end()
-    })
-    .catch(error => next(error))
+noteRouter.delete('/:id', async (request, response) => {
+    await Note.findByIdAndDelete(request.params.id)
+    response.status(204).end()
 })
 
 // Ruta PUT para actualizar una nota existente

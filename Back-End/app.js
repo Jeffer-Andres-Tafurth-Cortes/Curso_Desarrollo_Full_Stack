@@ -1,8 +1,12 @@
+// Importamos el router de usuarios
+const usersRouter = require('./controllers/users')
+
 // Importamos las varibales de entorno
 const config = require('./utils/config')
 
 // Importamos Express
 const express = require('express')
+require('express-async-errors')
 const app = express()
 
 // Importamos CORS
@@ -39,6 +43,8 @@ app.use(middleware.requestLogger)
 
 // Usamos la API correspondiente a las notas en funcion de la Rutas
 app.use('/api/notes', notesRoutes)
+
+app.use('/api/users', usersRouter)
 
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)

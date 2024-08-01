@@ -64,4 +64,16 @@
 - Si estamos usando sistema operativo Windows se debe de implementar una dependencia de desarrollo que nos permite ejecutar los script para los test, el comando es 'npm install --save-dev cross-env' (se ejecuta en la raiz del backend)
 - Tambien instalamos otra dependencia de desarrollo para testear la API, y el comando es 'npm install --save-dev supertest' (se ejecuta en la raiz del backend)
 - Las respectivas pruebas del backend trabajado estaran en el archivo 'note_api.test.js' en el directorio 'tests'
+- Es bastante recomendable ejecutar una o dos pruebas y que sea una por una; para ello se usa el metodo 'only' para exactamente que pruebas se van a ejecutar; y ya agregando el metodo a las pruebas se debe de usar el comando 'npm test -- --test-only' en al terminal para que ejecute solamente las pruebas que tienen el metodo
+- Otra opcion que tambien tenemos para realizar las pruebas es simplemente especificar el archivo de pruebas para que solo ejecute ese, para esto se usa el comando en la terminal 'npm test -- tests/note_api.test.js' (se especifica la carpeta y el archivo de pruebas)
+- La sintaxis async/await nos ayuda a usar funciones asincronicas que devuelven una promesa
+- Cuando estemos trabajando con async/await para el tema de manejo de errores por ejemplo al momento de las rutas y/o peticiones HTTP usamos un 'try/catch' en donde el el 'try' estara la respuesta await de la funcion y el 'catch' tendra simplemente el error
+- A pesar de que en un inicio se uso el 'try/catch' para el manejos de rutas; existe una libreria llamada 'express-async-errors' que nos ayuda  permitir refactorizar el 'try/catch', el comando para instalarla es: 'npm install express-async-errors'. La magia de esta liberia es que permite eliminar por completo los bloques 'try/catch' pero sigue teniendo la misma funcionalidad como si usaramos todo el bloque de codigo
+
+## Administracion de Usuarios
+- En esta parte lo que se busca es que los usuarios se almacenen en la base de datos y que cada usuario tenga vinculada sus respectivas notas
+- Se crea un archivo en la carpeta 'models' llamado 'user.js'; el cual tendra el modelo de la creacion de usuario y a su vez la asociacion de las notas si tiene o cuando cree una
+- Los usuarios estan compuesto por varias partes: un usuario unico, un nombre y la passwordHash (el hash de la contraseña es el resultado de una funcion hash unidireccional; es decir, criptografiar la contraseña por temas de seguridad)
+- Se debe de instalar el paquete 'bcrypt' para generar los hashes de las contraseñas, el comando es 'npm install bcrypt'
+- Esto tambien implica que debemos de definir una ruta aparte para lo que seran los usuarios, esto se crea en un archivo llamado 'users.js' en la carpeta 'controllers'
 
