@@ -1,5 +1,5 @@
 // Importamos la libreria de testin de node
-const { test, after, beforeEach } = require('node:test')
+const { test, after, beforeEach, describe } = require('node:test')
 const assert = require('node:assert')
 
 // Importamos la conexion con la base de datos

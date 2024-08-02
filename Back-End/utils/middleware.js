@@ -14,11 +14,18 @@ const unknownEndpoint = (request, response) => {
 }
 
 const errorHandler = (error, request, response, next) => {
-  logger.error(error.message)
-
   if(error.name === 'CastError'){
-    return response.status(404).send({ error: 'Esta mal el formato del ID' })
+    return response.status(400).send({ error: 'Esta mal el formato del ID' })
+  } else if(error.name === 'ValidationError'){
+    return response.status(400).json({ error: error.message })
+  } else if(error.name === 'MongoServerError' && error.name.includes('E11000 duplicate key error')){
+    return response.status(400).json({ error: `Se espera un 'username' unico ` })
+  } else if(error.name === 'JsonWebTokenError'){
+    return response.status(401).json({ error: 'Token invalido' })
+  } else if(error.name === 'TokenExpiredError'){
+    return response.status(401).json({ error: 'Token expirado' })
   }
+  next(error)
 }
 
 module.exports = {

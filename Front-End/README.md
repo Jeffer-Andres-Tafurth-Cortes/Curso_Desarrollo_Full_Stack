@@ -42,3 +42,16 @@
 ---
 
 # PARTE 5 - PROBANDO APLICACIONES REACT
+
+## Iniciar sesion en la Interfaz
+- En esta parte volvemos al Front End para hacer las respectivas implementaciones
+- Se implementa el formulario Login de inicio de sesion, pero usando un operador ternario se valida que si el usuario ha iniciado sesion pues se mostraran las notas; si el usuario no ha iniciado sesion pues se renderizara el respectivo formulario para que el usuario inicie sesion
+- Cuando se refresca la pagina la sesion activa del usuario desaparece; por ende, necesitamos que a pesar de esto la sesion del usuario siga activa; aqui es donde entra el local-storage (almacenamiento local), para poder aplicar esto se necesita del metodo setItem() y para obtener el valor se usa del metodo getItem(), mientras que removeItem() elimina el valor
+
+## Props.children y proptypes
+- Los props son cuando se pasa informacion de manera desestructurada de un componente padre a un componente hijo
+- Las variables de los props se pueden pasar de manera desestructurada
+
+## Pruebas de extremo a extremo: Playwright
+
+## Pruebas de extremo a extremo: Cypress

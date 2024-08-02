@@ -77,3 +77,10 @@
 - Se debe de instalar el paquete 'bcrypt' para generar los hashes de las contraseñas, el comando es 'npm install bcrypt'
 - Esto tambien implica que debemos de definir una ruta aparte para lo que seran los usuarios, esto se crea en un archivo llamado 'users.js' en la carpeta 'controllers'
 
+## Autenticacion basada en Token
+- Cuando se habla de Tokens nos referimos a un mecanismo de autenticacion para acceder a alguna aplicacion
+- En este caso para esta aplicacion se implementara tokens para cuando un usuario se inicie sesion en la aplicacion de notas, hay que tener es cuenta que para esto se requiere de un formulario implementado en el Front-End. Si en este caso el nombre y la contraseña son correctos se generara un token que identifica al usuario para el inicio de sesion
+- El Back-End es el encargado de procesas los datos y devolver el token como respuesta para el acceso
+- Para implementar los tokens en esta situacion se hara uso de la libreria jsonwebtoken que generara los tokens web en formato JSON; para ello en la raiz del back-end se instala la libreria con el comando 'npm install jsonwebtoken'
+- El codigo respectivo frente a la funcionalidad de inicio de sesion ira en el archivo 'login.js' de la carpeta 'controllers'
+
